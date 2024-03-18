@@ -1,0 +1,17 @@
+
+/dist
+/node_modules
+/.git
+
+/.idea
+/.vscode
+/.vs
+
+.env.example
+package-lock.json
+compose.yml
+
+.gitignore
+.gitattributes
+compose.yml
+

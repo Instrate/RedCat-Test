@@ -1,0 +1,27 @@
+version: "3.9"
+name: redcat-test
+
+services:
+  back:
+    image: redcat-back-test:latest
+    restart: always
+    build: .
+    container_name: redcat-back-test-c
+    ports:
+      - "3001:3000"
+    volumes:
+      # for development purposes
+      - ./dist:/home/app/dist
+      - /home/app/node_modules
+    stdin_open: true
+    tty: true
+
+  db:
+    image: postgres:16-alpine
+    restart: always
+    container_name: redcat-db-test-c
+    shm_size: 128mb
+    ports:
+      - "8080:5432"
+    environment:
+      POSTGRES_PASSWORD: "<custom_pwd>"
