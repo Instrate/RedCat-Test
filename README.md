@@ -32,11 +32,12 @@ docker pull postgres:16-alpine
 * `container name` **>** ``--name ...``
 * exposed `port` **>** ``-p ...:5432``
 * `password` **>** ``-e POSTGRES_PASSWORD=...`` 
+* `database name` **>** ``-e POSTGRES_DB=...``
 
 are recommended to be changed before executing this command
 
 ```bash
-docker run --name postgres-test-c -p 8080:5432 -e POSTGRES_PASSWORD=<custom_pwd> -d postgres:16-alpine
+docker run --name postgres-test-c -p 8080:5432 -e POSTGRES_PASSWORD=<custom_pwd> -e POSTGRES_DB=redcat-local-test  -d postgres:16-alpine
 ```
 ##### Default username for database is `root`
 
